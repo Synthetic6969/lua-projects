@@ -1,4 +1,4 @@
-function generateRandomString(size, options)
+return function generateRandomString(size, options)
     if not options then options = {} end
     local ignoreChars = options.ignoreChars or {}
     local minChar = options.minChar or 0
