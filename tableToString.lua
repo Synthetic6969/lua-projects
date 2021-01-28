@@ -18,7 +18,7 @@ function concatTable(t)
                 vRemoved = string.gsub(v, "\n", "\\n")
                 s = s.."'"..vRemoved.."';".."\n"
             else
-                s = s..v..";\n"
+                s = s..tostring(v)..";\n"
             end
         end
         tabs = tabs - 1
