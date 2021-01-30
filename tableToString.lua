@@ -30,3 +30,5 @@ function concatTable(t)
     
     return searchTable(t)
 end
+
+return concatTable
