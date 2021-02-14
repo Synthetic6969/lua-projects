@@ -14,9 +14,7 @@ function concatTable(t)
             if type(v) == "table" then
                 searchTable(v)
             elseif type(v) == "string" then
-                local vRemoved
-                vRemoved = string.gsub(v, "\n", "\\n")
-                s = s.."'"..vRemoved.."';".."\n"
+                s = s.."'"..string.gsub(v, "\n", "\\n").."';".."\n"
             elseif type(v) == "userdata" and typeof(v) == "Instance" then
                 s = s..v:GetFullName()..";\n"
             elseif typeof(v) == "Vector3" then
