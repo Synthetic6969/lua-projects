@@ -19,6 +19,20 @@ function concatTable(t)
                 s = s.."'"..vRemoved.."';".."\n"
             elseif type(v) == "userdata" and typeof(v) == "Instance" then
                 s = s..v:GetFullName()..";\n"
+            elseif typeof(v) == "Vector3" then
+                s = s.."Vector3.new("..tostring(v)..");\n"
+            elseif typeof(v) == "CFrame" then
+                s = s.."CFrame.new("..tostring(v)..");\n"
+            elseif typeof(v) == "Color3" then
+                s = s.."Color3.fromRGB("..tostring(v)..");\n"
+            elseif typeof(v) == "BrickColor" then
+                s = s.."BrickColor.new("..tostring(v)..");\n"
+            elseif typeof(v) == "Enum" or typeof(v) == "EnumItem" or typeof(v) == "Enums" then
+                s = s..tostring(v)..";\n"
+            elseif typeof(v) == "Ray" then
+                s = s.."Ray.new(Vector3.new("..tostring(v.Origin).."), Vector3.new("..tostring(v.Direction).."));\n"
+            elseif typeof(v) == "Ray" then
+                s = s.."TweenInfo.new(.."tostring(v)..");\n"
             else
                 s = s..tostring(v)..";\n"
             end
