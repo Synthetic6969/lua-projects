@@ -1,4 +1,4 @@
-function concatTable(t)
+return function(t)
     local s = ""
     local tabs = 0
     function searchTable(t)
