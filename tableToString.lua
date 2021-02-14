@@ -30,7 +30,7 @@ function concatTable(t)
             elseif typeof(v) == "Ray" then
                 s = s.."Ray.new(Vector3.new("..tostring(v.Origin).."), Vector3.new("..tostring(v.Direction).."));\n"
             elseif typeof(v) == "TweenInfo" then
-                s = s.."TweenInfo.new(.."tostring(v)..");\n"
+                s = s.."TweenInfo.new(.."..tostring(v)..");\n"
             else
                 s = s..tostring(v)..";\n"
             end
@@ -42,5 +42,3 @@ function concatTable(t)
     
     return searchTable(t)
 end
-
-return concatTable
