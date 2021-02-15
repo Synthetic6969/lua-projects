@@ -36,7 +36,7 @@ if not getgenv().synSpy.enabled then
                 s = s.."Script: "..callingScript.."\n"
                 
                 s = s.."Arguments: "..concatTable(args).."\n"
-                if not table.find(synSpy.hiddenRemotes, self.Name) then
+                if not table.find(synSpy.hiddenRemotes, self) then
                     getgenv().synSpy.spyPrint(s)
                 end
             end)()
