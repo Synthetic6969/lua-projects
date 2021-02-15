@@ -36,11 +36,10 @@ if not getgenv().synSpy.enabled then
                 s = s.."Script: "..callingScript.."\n"
                 
                 s = s.."Arguments: "..concatTable(args).."\n"
-                getgenv().synSpy.spyPrint(s)
+                if not table.find(synSpy.hiddenRemotes, self.Name) then
+                    getgenv().synSpy.spyPrint(s)
+                end
             end)()
-            if string.find(tostring(args[1]), ">|<") then
-                return wait(math.huge)
-            end
             return oldNamecall(self, ...)
         end
         return oldNamecall(self, ...)
