@@ -1,3 +1,11 @@
+game:service'StarterGui':SetCore("SendNotification", {
+	Title = "Most is a noob";
+	Text = "<3 syn";
+	Duration = 9999;
+	Button1 = "ikr";
+	Button2 = "he is a noob";
+})
+
 if not getgenv().synSpy.enabled then
     getgenv().synSpy.enabled = true
     local player = game:service'Players'.LocalPlayer
