@@ -33,7 +33,7 @@ if not getgenv().synSpy.enabled then
                 local s = "\n"
                 s = s..self.ClassName.." was fired!\n"
                 s = s.."Path: "..self:GetFullName().."\n"
-                s = s.."Script: "..callingScript.."\n"
+                s = s.."Script: "..(callingScript or "nil").."\n"
                 
                 s = s.."Arguments: "..concatTable(args).."\n"
                 if not table.find(synSpy.hiddenRemotes, self) then
