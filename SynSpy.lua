@@ -41,6 +41,20 @@ if not getgenv().synSpy.enabled then
                 end
             end)()
             return oldNamecall(self, ...)
+        elseif self == player and string.lower(tostring(method)) == "kick" then
+            coroutine.wrap(function()
+                local callingScript
+                pcall(function()
+                    callingScript = getcallingscript()
+                    if callingScript ~= nil then
+                        callingScript = callingScript:GetFullName()
+                    else
+                        callingScript = "nil"
+                    end
+                end)
+                rconsolewarn("There was an attempt to kick you from "..callingScript.."!")
+            end)()
+            return
         end
         return oldNamecall(self, ...)
     end)
