@@ -41,7 +41,7 @@ if not getgenv().synSpy.enabled then
                 end
             end)()
             return oldNamecall(self, ...)
-        elseif self == player and string.lower(tostring(method)) == "kick" then
+        elseif synSpy.disableLocalKick and self == player and string.lower(tostring(method)) == "kick" then
             coroutine.wrap(function()
                 local callingScript
                 pcall(function()
