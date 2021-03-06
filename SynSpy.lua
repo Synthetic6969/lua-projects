@@ -1,3 +1,4 @@
+if not getgenv().synSpy then getgenv().synSpy = {} end
 if not getgenv().synSpy.enabled then
     getgenv().synSpy.enabled = true
     local player = game:service'Players'.LocalPlayer
