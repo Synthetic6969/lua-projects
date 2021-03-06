@@ -1,19 +1,9 @@
-if not getgenv().synSpy then getgenv().synSpy = {} end
 if not getgenv().synSpy.enabled then
     getgenv().synSpy.enabled = true
     local player = game:service'Players'.LocalPlayer
     local gmt = getrawmetatable(game)
     local oldNamecall = gmt.__namecall
     setreadonly(gmt, false)
-    
-    setmetatable(getgenv().synSpy, {__index = {
-        spyPrint              = function()end;
-        disableMessageOut     = true;
-        disableErrorDetection = true;
-        disableLocalKick      = true;
-        helpMessage           = false;
-        hiddenRemotes         = {}
-    }})
     
     local concatTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Synthetic6969/lua-projects/main/tableToString.lua", true))()
     
