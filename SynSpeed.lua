@@ -1,3 +1,4 @@
+return function()
 local player = game:GetService("Players").LocalPlayer
 getgenv().WalkSpeed = 16
 getgenv().JumpPower = 50
@@ -417,3 +418,4 @@ game:GetService("UserInputService").InputBegan:connect(function(UserInput, isTyp
         end)
     end
 end)
+end
