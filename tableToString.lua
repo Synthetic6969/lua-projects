@@ -5,11 +5,7 @@ return function(t)
         s = s.."{\n"
         tabs = tabs + 1
         for i, v in pairs(t) do
-            if type(i) == "string" then
-                s = s..string.rep("    ", tabs).."['"..i.."'] = "
-            else
-                s = s..string.rep("    ", tabs).."["..tostring(i).."] = "
-            end
+            s = s..string.rep("    ", tabs).."["..tostring(i).."] = "
             
             if type(v) == "table" then
                 searchTable(v)
